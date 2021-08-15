@@ -1,0 +1,83 @@
+---
+
+---
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  <!-- ulのリスト先頭の「・」を非表示にする またリストを横に並べる -->
+  <link media="all" href="css/4listjs.css" type="text/css" rel="stylesheet">
+  <title>List.jsのサンプルページ</title>
+</head>
+<body class="container">
+  <h1>図書館関係本リストをキーワードで絞り込み</h1>
+  <br>
+  <h2>目録データのソースについて</h2>
+  このページで使っているサンプル図書リストは、国立情報学研究所の「NII総合目録データベース（NACSIS-CAT）」<a href="https://creativecommons.org/licenses/by/4.0/deed.ja" target="_blank">(CC-BYライセンス)</a>を元にしています。</p>
+      <p>
+  <strong>「図書館」</strong>に関する書誌データを100件程度抜粋して使いました。
+  <br>
+  <!-- list.jsのブロック idはlist.jsの呼び出しに使う　HTML末尾のスクリプトで指定している -->
+  <div id="listdata">
+    <div class="form-group">
+      <label for="keyword">文字列をタイプ</label>
+      <!-- classをsearchにし、list.jsの検索欄に -->
+      <input id="keyword" class="search form-control form-control-lg" placeholder="input any word" size="50" />
+    <br>
+    <div class="alert">※　NCIDと刊行年月日は絞り込み対象外</div>
+    </div>
+    <br>
+    <!-- classをpaginationにし、list.jsのページネーションに -->
+    <div class="form-group">
+      <ul class="pagination list-inline"></ul>
+    </div>
+    <br>
+    <!--
+      図書リスト
+         <ul>のclassをlist.js指定の"list"にすることで処理が働く
+         classは任意設定　これによりlist.jsの絞り込み対象を指定 HTML末尾のスクリプトで指定している
+    -->
+    <ul class="list list-unstyled">
+      {% for item in site.data.books %}
+      <li>{{ item.title }}</li>
+      <p>
+      <li>
+      <dl>
+        <dt class="title">{{ item.title }}</dt>
+        <dd class="creator">{{ item.title }}</dd>
+        <dd class="publisher">{{ item.title }}</dd>
+        <dd class="ncid">{{ item.title }}</dd>
+        <dd class="edition">{{ item.title }}</dd>
+        <dd class="publicationDate">{{ item.title }}</dd>
+        <dd class="note">{{ item.title }}</dd>
+      </dl>
+      </li>
+      </p>
+      {% endfor %}
+    </ul>
+  </div>
+<!-- list.js スクリプトの記述 -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/list.js/2.3.1/list.min.js"></script>
+<script>
+  // List.jsの動作パラメータ設定
+  var options = {
+    // 絞り込み対象とするclass を指定
+    valueNames: ['title', 'creator', 'publisher', 'edition', 'note'],
+    // ページネーション指定 pageはページごとの表示件数
+    page: 10,
+    pagination: true
+  };
+  // list.jsの対象とする<div>のidを指定
+  var listObj = new List('listdata', options);
+  // ios対応のため、inputイベントで動作させる
+  $('#keyword').on('input', function() {
+    var searchString = $(this).val();
+    listObj.search(searchString);
+  });
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
+</body>
+</html>
