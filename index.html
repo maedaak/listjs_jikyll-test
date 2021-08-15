@@ -23,13 +23,10 @@
   <!-- list.jsのブロック idはlist.jsの呼び出しに使う　HTML末尾のスクリプトで指定している -->
   <div id="listdata">
     <div class="form-group">
-      <label for="keyword">文字列をタイプ</label>
+      <label for="keyword">文字列をタイプ<span class="alert">※　NCIDと刊行年月日は絞り込み対象外</span></label>
       <!-- classをsearchにし、list.jsの検索欄に -->
       <input id="keyword" class="search form-control form-control-lg" placeholder="input any word" size="50" />
-    <br>
-    <span class="alert">※　NCIDと刊行年月日は絞り込み対象外</span>
     </div>
-    <br>
     <!-- classをpaginationにし、list.jsのページネーションに -->
     <div class="form-group">
       <ul class="pagination list-inline"></ul>
