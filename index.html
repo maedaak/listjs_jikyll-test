@@ -20,11 +20,6 @@
   <p>加えてlist.jsでページ切り替えとキーワード絞り込み機能を付与</p>
   <p>Code は<a href="https://github.com/maedaak/listjs_jikyll-test/" target="_blank">こちら<a/></p>
   <br>
-  <h2>目録データのソースについて</h2>
-  このページで使っているサンプル図書リストは、国立情報学研究所の「NII総合目録データベース（NACSIS-CAT）」<a href="https://creativecommons.org/licenses/by/4.0/deed.ja" target="_blank">(CC-BYライセンス)</a>を元にしています。</p>
-      <p>
-  <strong>「図書館」</strong>に関する書誌データを100件程度抜粋して使いました。
-  <br>
   <!-- list.jsのブロック idはlist.jsの呼び出しに使う　HTML末尾のスクリプトで指定している -->
   <div id="listdata">
     <div class="form-group">
@@ -63,6 +58,13 @@
       {% endfor %}
     </ul>
   </div>
+  <hr>
+  <<footer>
+    <h2>目録データのソースについて</h2>
+    このページで使っているサンプル図書リストは、国立情報学研究所の「NII総合目録データベース（NACSIS-CAT）」<a href="https://creativecommons.org/licenses/by/4.0/deed.ja" target="_blank">(CC-BYライセンス)</a>を元にしています。</p>
+    <br>
+    <strong>「図書館」</strong>に関する書誌データを100件程度抜粋して使いました。
+  </footer>
 <!-- list.js スクリプトの記述 -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/list.js/2.3.1/list.min.js"></script>
