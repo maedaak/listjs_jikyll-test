@@ -39,7 +39,6 @@
     -->
     <ul class="list list-unstyled">
       {% for item in site.data.books %}
-      <p>
       <li>
       <dl>
         <dt class="title">{{ item.title }}</dt>
@@ -51,7 +50,7 @@
         <dd class="note">{{ item.note }}</dd>
       </dl>
       </li>
-      </p>
+      <br>
       {% endfor %}
     </ul>
   </div>
