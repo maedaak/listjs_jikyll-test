@@ -42,7 +42,7 @@
       <li>
       <dl>
         <dt class="title">{{ item.title }}</dt>
-        <dd class="creator">{{ creator }}</dd>
+        <dd class="creator">{{ item.creator }}</dd>
         <dd class="publisher">{{ item.publisher }}</dd>
         <dd class="ncid">{{ item.ncid }}</dd>
         <dd class="edition">{{ item.edtion }}</dd>
@@ -74,7 +74,7 @@
   };
   // list.jsの対象とする<div>のidを指定
   var listObj = new List('listdata', options);
-  // ios対応のため、inputイベントで動作させる
+  // iOS対応のため、inputイベントで動作させる
   $('#keyword').on('input', function() {
     var searchString = $(this).val();
     listObj.search(searchString);
