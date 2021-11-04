@@ -26,9 +26,10 @@
   <!-- list.jsのブロック idはlist.jsの呼び出しに使う　HTML末尾のスクリプトで指定している -->
   <div id="listdata">
     <div class="form-group">
-      <label for="keyword">文字列をタイプ<span class="alert">※　NCIDと刊行年月日は絞り込み対象外</span></label>
+      <label for="keyword">文字列をタイプ<span class="alert">※　半角スペース区切りでAND検索可能</span></label>
       <!-- classをsearchにし、list.jsの検索欄に -->
       <input id="keyword" class="search form-control form-control-lg" placeholder="input any word" size="50" />
+      <span id="hits"></span>
     </div>
     <!-- classをpaginationにし、list.jsのページネーションに -->
     <div class="form-group">
@@ -69,20 +70,26 @@
 <script>
   // List.jsの動作パラメータ設定
   var options = {
-    // 絞り込み対象とするclass を指定
-    valueNames: ['title', 'creator', 'publisher', 'edition', 'note'],
+    // 対象とするclass を指定
+    valueNames: ['title', 'creator', 'publisher', 'ncid', 'edition', 'note'],
     // ページネーション指定 pageはページごとの表示件数
-    page: 10,
-    pagination: true
+    page: 20,
+    pagination: {
+      paginationClass: 'pagination',
+      innerWindow: 4,
+      outerWindow: 1,
+    }
   };
   // list.jsの対象とする<div>のidを指定
   var listObj = new List('listdata', options);
-  // iOS対応のため、inputイベントで動作させる
+  // iOS対応のため、inputイベントで動作させる。併せてヒット件数を表示させる。
   $('#keyword').on('input', function() {
     var searchString = $(this).val();
     listObj.search(searchString);
+    $('#hits').html(listObj.matchingItems.length + "件ヒットしました");
   });
 </script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 </body>
 </html>
