@@ -39,14 +39,13 @@
     <!--
       図書リスト
          <ul>のclassをlist.js指定の"list"にすることで処理が働く
-         classは任意設定　これによりlist.jsの絞り込み対象を指定 HTML末尾のスクリプトで指定している
+         classは任意設定
     -->
     <ul class="list list-unstyled">
       {% for item in site.data.books %}
       <li>
-        ---
+      <p class="horizon"></p>
       <dl>
-        <p class="horizon"></p>
         <dt class="title">{{ item.title }}</dt>
         <dd class="creator">{{ item.creator }}</dd>
         <dd class="publisher">{{ item.publisher }}</dd>
@@ -65,7 +64,7 @@
     このページで使っているサンプル図書リストは、国立情報学研究所の「NII総合目録データベース（NACSIS-CAT）」<a href="https://creativecommons.org/licenses/by/4.0/deed.ja" target="_blank">(CC-BYライセンス)</a>を元にしています。
     <br>
     <strong>「図書館」</strong>に関する書誌データを60件程度抜粋して使いました。
-    <br>
+    <br><br>
     <a href="#top">ページトップへ</a>
   </footer>
 <!-- list.js スクリプトの記述 -->
