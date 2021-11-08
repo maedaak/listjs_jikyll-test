@@ -13,7 +13,7 @@ NACSIS-CATの総合目録データベースの書誌情報(CC-BY)を使用して
 
 ## 流用方法
 以下の資料に記載している。
-- 発表資料 https://www.slideshare.net/genroku/web-listjs-jekyll-github-pages
+- https://github.com/maedaak/listjs_jikyll-test/blob/main/doc/Easy_Web_Bibliographic_List_rev.pdf
 
 ## HTMLテンプレート
 - Jekeyllを使用している。
