@@ -9,13 +9,13 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
   <!-- ulのリスト先頭の「・」を非表示にする またリストを横に並べる -->
   <link media="all" href="css/4listjs.css" type="text/css" rel="stylesheet">
-  <! -- pace を使ったローディングバーの表示 -->
+  <!-- pace を使ったローディングバーの表示 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/black/pace-theme-loading-bar.min.css" integrity="sha512-p/7j92gn7aB9tDnfPF70pYqrHofcWtimt2eA+yEe2+h74ur0vHO79yjrpF0s1K9d02R6gkpBmLdZwPaCiazPQA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha512-2cbsQGdowNDPcKuoBd2bCcsJky87Mv0LEtD/nunJUgk6MOYTgVMGihS/xCEghNf04DPhNiJ4DZw5BxDd1uyOdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <title>list.jsとjekyllによる静的な図書館関係本リストのテスト</title>
 </head>
 <body class="container">
-  <h1>list.jsとjekyllによる静的な図書館関係本リストのテスト</h1>
+  <h1 id="top">list.jsとjekyllによる静的な図書館関係本リストのテスト</h1>
   <p>
     GitHub Pagesはjekyllが使えるので、<a href="https://github.com/maedaak/listjs_jikyll-test/tree/main/_data" target="_blank">YAMLの図書リスト</a>を読み込ませてみた<br>
     <br>
@@ -46,6 +46,7 @@
       <li>
         ---
       <dl>
+        <p class="horizon"></p>
         <dt class="title">{{ item.title }}</dt>
         <dd class="creator">{{ item.creator }}</dd>
         <dd class="publisher">{{ item.publisher }}</dd>
@@ -64,6 +65,8 @@
     このページで使っているサンプル図書リストは、国立情報学研究所の「NII総合目録データベース（NACSIS-CAT）」<a href="https://creativecommons.org/licenses/by/4.0/deed.ja" target="_blank">(CC-BYライセンス)</a>を元にしています。
     <br>
     <strong>「図書館」</strong>に関する書誌データを60件程度抜粋して使いました。
+    <br>
+    <a href="#top">ページトップへ</a>
   </footer>
 <!-- list.js スクリプトの記述 -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
