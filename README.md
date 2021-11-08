@@ -1,37 +1,19 @@
-## Welcome to GitHub Pages
+# list.jsとjekyllによる静的な図書館関係本リストのテスト
 
-You can use the [editor on GitHub](https://github.com/maedaak/jekyll-test/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
+## サンプルサイトURL
+https://maedaak.github.io/listjs_jikyll-test/
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## 概要
+List.jsのHTML内検索機能を使った書誌検索サンプルページである。<br>
+書誌リストTSVをHTML中に埋め込むにあたり、GitHub Pagesの静的サイトジェネレーターJekyllを使用した。
 
-### Markdown
+## サンプルデータ
+NACSIS-CATの総合目録データベースの書誌情報(CC-BY)を使用している。
+そのままだとRDFでありJekyllで処理できないため、大学図書館員のための図書館システム開発練習用データ( https://mbc.dl.itc.u-tokyo.ac.jp/data4librarysystem/ )の図書書誌TSVから、先頭１万件を抽出して使用した。
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+## 流用方法
+以下の資料に記載している。
+- 発表資料 https://www.slideshare.net/genroku/web-listjs-jekyll-github-pages
 
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/maedaak/jekyll-test/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+## HTMLテンプレート
+- Jekeyllを使用している。
